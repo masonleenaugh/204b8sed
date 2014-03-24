@@ -56,31 +56,29 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
   
-  if(music===0){
-  if (tile.value===2048){
-    $('#cook').get(0).pause();
-    $('#pretty').get(0).play();
-  }
-  else if(tile.value===1024){
-    $('#wws').get(0).pause();
-    $('#cook').get(0).play();
-  }
-  else if(tile.value===512){
-    $('#edremix').get(0).pause();
-    $('#wws').get(0).play();
-  }
-  else if(tile.value===256){
-    $('#paris').get(0).pause();
-    $('#edremix').get(0).play();
-  }
-  else if(tile.value===128){
-    $("#edremix").get(0).pause();
-    $("#wws").get(0).pause();
-    $("#cook").get(0).pause();
-    $("#pretty").get(0).pause();
-    $('#imgod').get(0).pause();
-    $('#paris').get(0).play();
-  } 
+  if(music<tile.value){
+    music=tile.value
+
+  if (music===2048){
+        $('#cook').get(0).pause();
+        $('#pretty').get(0).play();
+      }
+      else if(music===1024){
+        $('#wws').get(0).pause();
+        $('#cook').get(0).play();
+      }
+      else if(music===512){
+        $('#edremix').get(0).pause();
+        $('#wws').get(0).play();
+      }
+      else if(music===256){
+        $('#paris').get(0).pause();
+        $('#edremix').get(0).play();
+      }
+      else if(music===128){
+        $('#imgod').get(0).pause();
+        $('#paris').get(0).play();
+    }
 } 
 
   if (tile.value > 2048) classes.push("tile-super");
