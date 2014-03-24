@@ -56,7 +56,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
   
-  /*if(music===0){
+  if(music===0){
   if (tile.value===2048){
     $('#cook').get(0).pause();
     $('#pretty').get(0).play();
@@ -77,7 +77,7 @@ HTMLActuator.prototype.addTile = function (tile) {
     $('#imgod').get(0).pause();
     $('#paris').get(0).play();
   } 
-} */
+} 
 
   if (tile.value > 2048) classes.push("tile-super");
 
