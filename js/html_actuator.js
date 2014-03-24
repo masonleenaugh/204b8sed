@@ -74,6 +74,10 @@ HTMLActuator.prototype.addTile = function (tile) {
     $('#edremix').get(0).play();
   }
   else if(tile.value===128){
+    $("#edremix").get(0).pause();
+    $("#wws").get(0).pause();
+    $("#cook").get(0).pause();
+    $("#pretty").get(0).pause();
     $('#imgod').get(0).pause();
     $('#paris').get(0).play();
   } 
