@@ -1,4 +1,3 @@
-var music=0;
 function HTMLActuator() {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
@@ -49,15 +48,17 @@ HTMLActuator.prototype.clearContainer = function (container) {
 
 HTMLActuator.prototype.addTile = function (tile) {
   var self = this;
+  var music=0;
   var wrapper   = document.createElement("div");
   var inner     = document.createElement("div");
   var position  = tile.previousPosition || { x: tile.x, y: tile.y };
   var positionClass = this.positionClass(position);
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
-  if(tile.value>music){
+  
+  if(music<tile.value){
     music=tile.value
-    console.log(music);
+
   if (music===2048){
         $('#cook').get(0).pause();
         $('#pretty').get(0).play();
@@ -77,7 +78,7 @@ HTMLActuator.prototype.addTile = function (tile) {
       else if(music===128){
         $('#imgod').get(0).pause();
         $('#paris').get(0).play();
-      }
+    }
 } 
 
   if (tile.value > 2048) classes.push("tile-super");
