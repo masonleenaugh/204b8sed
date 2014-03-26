@@ -55,80 +55,30 @@ HTMLActuator.prototype.addTile = function (tile) {
   var positionClass = this.positionClass(position);
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
-  
-  var date= new Date();
-  var day= date.getDay();
-
   if(tile.value>music){
     music=tile.value
     console.log(music);
-    if(day===1||day===3||day===5){
-      if (music===2048){
-            $('#cook').get(0).pause();
-            $('#ily').get(0).play();
-          }
-      else if(music===1024){
-            $('#wws').get(0).pause();
-            $('#cook').get(0).play();
-          }
-      else if(music===512){
-            $('#edremix').get(0).pause();
-            $('#wws').get(0).play();
-          }
-      else if(music===256){
-            $('#paris').get(0).pause();
-            $('#edremix').get(0).play();
-          }
-      else if(music===128){
-            $('#imgod').get(0).pause();
-            $('#paris').get(0).play();
-          }
+  if (music===2048){
+        $('#cook').get(0).pause();
+        $('#pretty').get(0).play();
       }
-    else if(day===2||day===4||day===6){
-      if (music===2048){
-            $('#pretty').get(0).pause();
-            $('#ily').get(0).play();
-          }
       else if(music===1024){
-            $('#surrender').get(0).pause();
-            $('#pretty').get(0).play();
-          }
+        $('#wws').get(0).pause();
+        $('#cook').get(0).play();
+      }
       else if(music===512){
-            $('#heem').get(0).pause();
-            $('#surrender').get(0).play();
-          }
+        $('#edremix').get(0).pause();
+        $('#wws').get(0).play();
+      }
       else if(music===256){
-            $('#fmb').get(0).pause();
-            $('#heem').get(0).play();
-          }
+        $('#paris').get(0).pause();
+        $('#edremix').get(0).play();
+      }
       else if(music===128){
-            $('#imgod').get(0).pause();
-            $('#fmb').get(0).play();
-          }
-    }
-    else if(day===0){
-      if (music===2048){
-            $('#smdhoe').get(0).pause();
-            $('#ily').get(0).play();
-          }
-      else if(music===1024){
-            $('#exhibit').get(0).pause();
-            $('#smdhoe').get(0).play();
-          }
-      else if(music===512){
-            $('#fabio').get(0).pause();
-            $('#exhibit').get(0).play();
-          }
-      else if(music===256){
-            $('#martian').get(0).pause();
-            $('#fabio').get(0).play();
-          }
-      else if(music===128){
-            $('#imgod').get(0).pause();
-            $('#martian').get(0).play();
-          }
-    } 
-}
+        $('#imgod').get(0).pause();
+        $('#paris').get(0).play();
+      }
+} 
 
   if (tile.value > 2048) classes.push("tile-super");
 
